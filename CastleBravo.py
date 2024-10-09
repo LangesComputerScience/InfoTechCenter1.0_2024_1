@@ -1,8 +1,17 @@
 import sys  # Importing the sys module to use system-specific parameters and functions
 import time  # Importing the time module to use time-related functions
 
-# Print a welcome message
-print("\nWelcome to InfoTechCenter V1.0\n")
+# ANSI escape sequences for coloring text
+RED = "\033[91m"
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+BLUE = "\033[94m"
+MAGENTA = "\033[95m"
+CYAN = "\033[96m"
+RESET = "\033[0m"  # Reset the color back to default
+
+# Print a welcome message in cyan
+print(CYAN + "\nWelcome to InfoTechCenter V1.0\n" + RESET)
 
 # Initialize variables
 x = 0  # Counter to keep track of the number of loops
@@ -12,21 +21,22 @@ ellipsis = 0  # Counter to keep track of the number of dots to display
 while x != 20:
     x += 1  # Increment x by 1 with each loop iteration
 
-    # Create a booting message that includes a dynamic number of dots
-    message = ("Infotech Center System Booting" + "." * ellipsis)
+    # Create a booting message in magenta, with dynamic number of dots
+    message = (MAGENTA + "Infotech Center System Booting" + "." * ellipsis + RESET)
 
     ellipsis += 1  # Increment the number of dots in the message
 
     # Overwrite the current line in the terminal with the updated message
     sys.stdout.write("\r" + message)
+    sys.stdout.flush()  # Ensure the message is displayed immediately
 
     # Wait for 0.5 seconds before proceeding to the next loop iteration
-    time.sleep(.5)
+    time.sleep(0.5)
 
     # Reset ellipsis to 0 when it reaches 4, so the dots repeat from 0 to 3
     if ellipsis == 4:
         ellipsis = 0
 
-    # After 20 iterations, print the final message and exit the loop
+    # After 20 iterations, print the final message in cyan and exit the loop
     if x == 20:
-        print("\n\nOperating System Booted Up - Retina Scanned - Access Granted")
+        print(CYAN + "\n\nOperating System Booted Up - Retina Scanned - Access Granted" + RESET)
