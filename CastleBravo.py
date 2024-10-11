@@ -13,6 +13,9 @@ RESET = "\033[0m"  # Reset the color back to default
 # Print a welcome message in cyan
 print(CYAN + "\nWelcome to InfoTechCenter V1.0\n" + RESET)
 
+timeToSleep = 2 #variable to set the time library to 2 seconds when called
+time.sleep(timeToSleep)  #Calling the time to sleep library with the variable timeToSleeps value
+
 # Initialize variables
 x = 0  # Counter to keep track of the number of loops
 ellipsis = 0  # Counter to keep track of the number of dots to display
@@ -31,7 +34,7 @@ while x != 20:
     sys.stdout.flush()  # Ensure the message is displayed immediately
 
     # Wait for 0.5 seconds before proceeding to the next loop iteration
-    time.sleep(0.5)
+    time.sleep(1)
 
     # Reset ellipsis to 0 when it reaches 4, so the dots repeat from 0 to 3
     if ellipsis == 4:
