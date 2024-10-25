@@ -1,5 +1,7 @@
 import sys  # Importing the sys module to use system-specific parameters and functions
 import time  # Importing the time module to use time-related functions
+import random
+from time import sleep
 
 # ANSI escape sequences for coloring text
 RED = "\033[91m"
@@ -47,9 +49,6 @@ while x != 20:
 print("\n**************************************************************\n")
 
 print("Weather Branch")
-
-import random
-from time import sleep
 
 # Function to randomly choose a weather condition
 def weather():
